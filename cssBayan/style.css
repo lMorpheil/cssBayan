@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: bisque;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.row {
+    box-sizing: content-box;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+    max-width: 1920px;
+}
+
+.h1 {
+    font-size: 3rem;
+}
+
+.h2 {
+    font-size: 1.5rem;
+}
+
+.accordion {
+    margin-top: 40px;
+}
+
+.accordion__grid {
+    margin-top: 10px;
+}
+
+.accordion__content {
+    border-top: 1px solid grey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.accordion__content img {
+    max-width: 600px;
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    transition: all .5s ease-in-out;
+}
+
+.accordion__item {
+    cursor: pointer;
+}
+
+.accordion__item .h2 {
+    transition: all .5s ease-in-out;
+}
+
+.accordion__item input {
+    opacity: 0;
+    display: none;
+}
+
+.accordion__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.accordion__crosshair {
+    font-size: 2rem;
+    font-weight: 900;
+    transition: all .5s ease-in-out;
+    margin-left: 20px;
+}
+
+.accordion__item input:checked + .accordion__content .h2 {
+    color: rgb(44, 44, 226);
+    transition: all .5s ease-in-out;
+}
+
+.accordion__item input:checked + .accordion__content .accordion__crosshair {
+    transform: rotate(45deg);
+    transition: all .5s ease-in-out;
+}
+
+.accordion__item input:checked + .accordion__content img {
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+
+@media (hover: hover) {
+
+    .accordion__item:hover .accordion__content .h2 {
+        color: rgb(23, 185, 109);
+        transition: all .5s ease-in-out;
+    }
+    
+    .accordion__item:hover .accordion__content .accordion__crosshair {
+        transform: rotate(45deg);
+        transition: all .5s ease-in-out;
+    }
+    
+    .accordion__item:hover .accordion__content img {
+        width: 100%;
+        transition: all .5s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    
+    html {
+        font-size: 12px;
+    }
+
+    .row {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    
+    .accordion {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    html {
+        font-size: 8px;
+    }
+
+    .row {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
